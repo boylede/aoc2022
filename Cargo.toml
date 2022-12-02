@@ -1,0 +1,19 @@
+[package]
+name = "aoc2022"
+authors = ["Dan Boyle <boylede@gmail.com>"]
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+pixels = "0.10.0"
+time = "0.3.17"
+itertools = "0.10.5"
+rand = "0.8.5"
+rand_chacha ="0.3.1"
+
+[profile.release]
+opt-level = 3
+strip = "symbols"
+lto = "fat"
+panic = "abort"
+codegen-units = 1
