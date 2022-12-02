@@ -1,8 +1,8 @@
-const INPUT: &str = include_str!("../../input/day1.txt");
+pub const INPUT: &str = include_str!("../../input/day1.txt");
+pub const LABEL: &str = "Day 01";
 
-fn main() {
-    println!("day 1");
-    let mut elf_calories: Vec<i32> = INPUT
+pub fn run(input: &str) -> (String, String) {
+    let mut elf_calories: Vec<i32> = input
         .split("\n\n")
         .map(|elf_backpack_items| {
             elf_backpack_items
@@ -12,10 +12,9 @@ fn main() {
         })
         .collect();
 
-    let most_calories = elf_calories.iter().max().unwrap();
-    println!("parta: {}", most_calories);
-
+    let most_calories: i32 = elf_calories.iter().max().unwrap().to_owned();
+    
     elf_calories.sort_by(|a, b| b.partial_cmp(a).unwrap());
     let highest_three: i32 = elf_calories.iter().take(3).sum();
-    println!("partb: {}", highest_three);
+    (format!("{}", most_calories), format!("{}", highest_three))
 }

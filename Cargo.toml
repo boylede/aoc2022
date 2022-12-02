@@ -10,6 +10,7 @@ time = "0.3.17"
 itertools = "0.10.5"
 rand = "0.8.5"
 rand_chacha ="0.3.1"
+clap = { version = "4.0.29", features = ["derive"] }
 
 [profile.release]
 opt-level = 3
@@ -17,3 +18,11 @@ strip = "symbols"
 lto = "fat"
 panic = "abort"
 codegen-units = 1
+
+
+[dev-dependencies]
+criterion = "0.3"
+
+[[bench]]
+name = "days"
+harness = false
