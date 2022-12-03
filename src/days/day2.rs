@@ -19,25 +19,25 @@ pub fn run(input: &str) -> (String, String) {
                     'X' => (4, 3),
                     'Y' => (8, 4),
                     'Z' => (3, 8),
-                    _ => (0,0),
+                    _ => (0, 0),
                 },
                 'B' => match b {
                     'X' => (1, 1),
                     'Y' => (5, 5),
                     'Z' => (9, 9),
-                    _ => (0,0),
+                    _ => (0, 0),
                 },
                 'C' => match b {
                     'X' => (7, 2),
                     'Y' => (2, 6),
                     'Z' => (6, 7),
-                    _ => (0,0),
+                    _ => (0, 0),
                 },
-                _ => (0,0),
+                _ => (0, 0),
             }
         })
         .reduce(|(aa, bb), (a, b)| (aa + a, bb + b))
-        .unwrap_or((0,0));
+        .unwrap_or((0, 0));
 
     (format!("{parta}"), format!("{partb}"))
 }
@@ -202,7 +202,7 @@ mod pre_calculated {
         (format!("{parta}"), format!("{partb}"))
     }
 
-    fn build_lookup() {
+    pub fn build_lookup() {
         use super::*;
         for (pat, a, b) in LOOKUP_TABLE.iter() {
             let pa: i32 = pat
