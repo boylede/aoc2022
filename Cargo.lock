@@ -29,6 +29,7 @@ dependencies = [
  "clap 4.0.29",
  "criterion",
  "itertools",
+ "lazy_static",
  "pixels",
  "rand",
  "rand_chacha",

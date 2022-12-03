@@ -1,21 +1,19 @@
+use aoc2022::LOOKUP_TABLE;
 use clap::Parser;
 
-use aoc2022::LOOKUP_TABLE;
-
 fn main() {
-    let Args {day} = Args::parse();
-
-    let Some((runner, input)) = LOOKUP_TABLE.get(day) else {
+    let Args { day, alt } = Args::parse();
+    let Some((func, inputs)) = LOOKUP_TABLE.get(day) else {
         println!("Day {} not found", day);
         return;
     };
-    let results = runner(input);
-    println!(
-        "Day {}: parta: {}, partb: {}",
-        day,
-        results.0,
-        results.1
-    );
+    let input_index = alt.unwrap_or(0);
+    let Some(input) = inputs.get(input_index) else {
+        println!("Input {} not found", input_index);
+        return;
+    };
+    let (parta, partb) = func(input);
+    println!("Day {day}: parta: {parta}, partb: {partb}");
 }
 
 /// CLI runner harness for aoc entries
@@ -25,4 +23,7 @@ struct Args {
     /// Which day to run
     #[arg(short, long, default_value_t = 1)]
     day: usize,
+    /// use an alternate input
+    #[arg(short, long)]
+    alt: Option<usize>,
 }

@@ -1,3 +1,4 @@
+pub const INPUTS: &[&str] = &[INPUT];
 pub const INPUT: &str = include_str!("../../input/day1.txt");
 
 #[inline]
