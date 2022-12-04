@@ -13,3 +13,7 @@ Day two steps up the complexity only marginally, introducing a game of rock-pape
 ## Day 3 
 
 Day three involves a lot of string comparison, I bet there is a more effecient way to do this but I haven't looked into other solutions yet.
+
+## Day 4
+
+Day four is about checking for overlapping ranges. Hopefully this hints at some future spatial layout themes in this year's puzzles.
