@@ -9,16 +9,7 @@ pub fn run(input: &str) -> (String, String) {
         .map(|rucksack| {
             let len = rucksack.len();
             let (a, b) = rucksack.split_at(len / 2);
-            let mut chars = a.chars();
-            let item = loop {
-                let Some(item) = chars.next() else {
-                    panic!("ran out of items in line {rucksack}");
-                };
-                if b.contains(item) {
-                    break item;
-                }
-            };
-            item
+            a.chars().find(|item| b.contains(*item)).unwrap()
         })
         .map(|item| priority(item))
         .sum();
@@ -31,12 +22,10 @@ pub fn run(input: &str) -> (String, String) {
             let leader = group.next().unwrap();
             let a = group.next().unwrap();
             let b = group.next().unwrap();
-            for badge in leader.chars() {
-                if a.contains(badge) && b.contains(badge) {
-                    return badge;
-                }
-            }
-            panic!("badge not found for group");
+            leader
+                .chars()
+                .find(|badge| a.contains(*badge) && b.contains(*badge))
+                .unwrap()
         })
         .map(|badge| priority(badge))
         .sum();
