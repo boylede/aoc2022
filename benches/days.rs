@@ -19,6 +19,10 @@ fn day4(c: &mut Criterion) {
     use aoc2022::days::day4::*;
     c.bench_function("day 04", |b| b.iter(|| run(black_box(INPUT))));
 }
+fn day5(c: &mut Criterion) {
+    use aoc2022::days::day5::*;
+    c.bench_function("day 05", |b| b.iter(|| run(black_box(INPUT))));
+}
 
-criterion_group!(benches, day1, day2, day3, day4);
+criterion_group!(benches, day1, day2, day3, day4, day5);
 criterion_main!(benches);

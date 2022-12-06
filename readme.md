@@ -17,3 +17,7 @@ Day three involves a lot of string comparison, I bet there is a more effecient w
 ## Day 4
 
 Day four is about checking for overlapping ranges. Hopefully this hints at some future spatial layout themes in this year's puzzles.
+
+## Day 5
+
+Day five brought some interesting towers-of-hanoi elements to the table along with more complicated input parsing. I was really excited by this one. My solution is currently pretty messy, but it does the job for now until I come back to it. I think this one can be parsed and executed in a single pass, so that will be my goal on revisiting. 
