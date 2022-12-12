@@ -9,4 +9,5 @@ pub const LOOKUP_TABLE: &[(fn(&str) -> (String, String), &[&str])] = &[
     (day4::run, day4::INPUTS),
     (day5::run, day5::INPUTS),
     (day6::run, day6::INPUTS),
+    (day7::run, day7::INPUTS),
 ];
