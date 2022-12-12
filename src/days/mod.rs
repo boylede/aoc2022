@@ -5,6 +5,7 @@ pub mod day4;
 pub mod day5;
 pub mod day6;
 pub mod day7;
+pub mod day8;
 
 /// stub for lookup table entry 0
 pub fn day0(_: &str) -> (String, String) {
