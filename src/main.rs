@@ -13,7 +13,7 @@ fn main() {
         return;
     };
     let (parta, partb) = func(input);
-    println!("Day {day}: parta: {parta}, partb: {partb}");
+    println!("# Day {day}\n## Part A\n{parta}\n## Part B\n{partb}");
 }
 
 /// CLI runner harness for aoc entries
