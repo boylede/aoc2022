@@ -21,3 +21,9 @@ Day four is about checking for overlapping ranges. Hopefully this hints at some 
 ## Day 5
 
 Day five brought some interesting towers-of-hanoi elements to the table along with more complicated input parsing. I was really excited by this one. My solution is currently pretty messy, but it does the job for now until I come back to it. I think this one can be parsed and executed in a single pass, so that will be my goal on revisiting. 
+
+
+## Day 12
+
+Day twelve is a simple pathfinding excersize. I had a lot of trouble with it due to the fact that I assumed all map coordinates were reachable and the part 2 answer had me wondering why my pre-calculating step was never reaching some areas. After rewriting everything a few times I came back and looked at the input to notice that there are areas that can't be walked out of.
+
